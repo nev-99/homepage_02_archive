@@ -4,7 +4,6 @@
 
   if (!root) return;
 
-  // モーダル生成
   const modal = document.createElement("div");
   modal.className = "modal";
   modal.setAttribute("role", "dialog");
@@ -123,7 +122,6 @@
       wrapper.setAttribute("aria-expanded", String(expanded));
       btn.setAttribute("aria-expanded", String(expanded));
       if (expanded) {
-        // max-heightを中身の高さに合わせて開く
         panel.style.maxHeight = panel.scrollHeight + "px";
       } else {
         panel.style.maxHeight = "0px";
@@ -135,7 +133,6 @@
       setExpanded(!expanded);
     });
 
-    // リサイズ時に開いてるパネルの高さを更新
     window.addEventListener("resize", () => {
       if (btn.getAttribute("aria-expanded") === "true") {
         panel.style.maxHeight = panel.scrollHeight + "px";
@@ -147,7 +144,6 @@
     return wrapper;
   }
 
-  // 描画
   root.innerHTML = "";
   data.forEach((group, idx) => root.appendChild(makeGroup(group, idx)));
 })();

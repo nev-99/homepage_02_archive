@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NSFW Warning</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <div class="warning-box">
+    <h2>年齢確認 / Age Verification</h2>
+
+    <p>
+      このページには成人向け（NSFW）コンテンツが含まれます。<br>
+      18歳未満の方は閲覧できません。
+    </p>
+
+    <p>
+      This page contains adult-oriented (NSFW) content.<br>
+      You must be 18 years or older to enter.
+    </p>
+
+    <hr>
+
+    <p>
+      パスワード（4桁）を入力してください。<br>
+      Enter the 4-digit password.
+    </p>
+
+    <input 
+      type="password" 
+      id="passwordInput" 
+      maxlength="4"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      class="password-input"
+      placeholder="0000"
+    >
+
+    <p id="errorMessage" class="error-message"></p>
+
+    <div class="warning-buttons">
+      <button class="enter-btn" id="enterBtn">
+        Enter
+      </button>
+
+      <a href="index.html" class="back-btn">
+        戻る / Back
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  const CORRECT_PASSWORD = "1999";
+
+  const input = document.getElementById("passwordInput");
+  const button = document.getElementById("enterBtn");
+  const error = document.getElementById("errorMessage");
+
+  function checkPassword() {
+    if (input.value === CORRECT_PASSWORD) {
+      window.location.href = "nsfw.html";
+      return;
+    }
+
+    input.value = "";
+
+    error.innerHTML = `
+      パスワードが違います。<br>
+      ヒント：Topページの一番下参照。<br>
+      <br>
+      Incorrect password.<br>
+      Hint: Check the bottom of the main page.<br><br>
+      <small>If you're a 1337 hacker, you know what to do :)</small>
+    `;
+  }
+
+  button.addEventListener("click", checkPassword);
+
+  input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      checkPassword();
+    }
+  });
+</script>
+
+</body>
+</html>

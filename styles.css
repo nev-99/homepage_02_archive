@@ -1,4 +1,4 @@
-/* ===== 基本設定 ===== */
+/* ===== Base ===== */
 
 *,
 *::before,
@@ -9,13 +9,13 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #ffffff;
-  color: #000000;
+  background: #fff;
+  color: #000;
   font-family: "MS PGothic", "MS Gothic", Osaka, monospace;
   font-size: 14px;
 }
 
-/* ===== ページ横幅管理 ===== */
+/* ===== Layout ===== */
 
 .page-wrapper {
   width: 100%;
@@ -24,7 +24,6 @@ html, body {
   padding: 0 10px;
 }
 
-/* 各ブロックは常に100% */
 .site-header,
 .notice,
 .container,
@@ -32,13 +31,24 @@ html, body {
   width: 100%;
 }
 
-/* ===== ヘッダー ===== */
+/* ===== Header ===== */
 
 .site-header {
   margin-top: 20px;
   padding: 10px;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   background: #f0f0f0;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.subtitle,
+.header-note {
+  margin-top: 6px;
+  font-size: 12px;
 }
 
 .header-row {
@@ -47,41 +57,39 @@ html, body {
   align-items: center;
 }
 
-.site-header h1 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.subtitle {
-  margin-top: 5px;
-  font-size: 12px;
-}
-
-/* ===== 言語ボタン ===== */
-
-.lang-btn {
-  font-size: 12px;
-  padding: 4px 8px;
-  background: #ffffff;
-  border: 1px solid #000000;
-  cursor: pointer;
-}
-
-.lang-btn:hover {
-  background: #ffffcc;
-}
-
-/* ===== 注意書き ===== */
+/* ===== Notice / Links ===== */
 
 .notice {
   margin-top: 10px;
   padding: 6px;
-  border: 1px solid #000000;
+  border: 1px solid #000;
+  background: #ffffcc;
   font-size: 12px;
+}
+
+.mature-link,
+.nsfw-link {
+  margin-top: 10px;
+  padding: 6px;
+  border: 1px solid #000;
+  background: #eee;
+  text-align: center;
+}
+
+.mature-link a,
+.nsfw-link a,
+.sns-links a {
+  color: #0000ee;
+  text-decoration: none;
+}
+
+.mature-link a:hover,
+.nsfw-link a:hover,
+.sns-links a:hover {
   background: #ffffcc;
 }
 
-/* ===== フッター ===== */
+/* ===== Footer ===== */
 
 .site-footer {
   margin: 20px 0;
@@ -89,22 +97,22 @@ html, body {
   text-align: center;
 }
 
-/* ===== アコーディオン ===== */
+/* ===== Accordion ===== */
 
 .group {
-  border: 1px solid #000000;
+  border: 1px solid #000;
   margin-bottom: 10px;
 }
 
 .group-header {
   width: 100%;
-  background: #dcdcdc;
-  border: none;
   padding: 8px;
-  text-align: left;
-  cursor: pointer;
+  border: none;
+  background: #dcdcdc;
   font-weight: bold;
   font-size: 14px;
+  text-align: left;
+  cursor: pointer;
 }
 
 .group-header:hover {
@@ -115,15 +123,15 @@ html, body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease;
-  border-top: 1px solid #000000;
-  background: #ffffff;
+  border-top: 1px solid #000;
+  background: #fff;
 }
 
 .panel-inner {
   padding: 10px;
 }
 
-/* ===== 画像グリッド ===== */
+/* ===== Gallery Grid ===== */
 
 .grid {
   display: grid;
@@ -133,11 +141,11 @@ html, body {
 
 .card {
   display: block;
+  padding: 4px;
+  border: 1px solid #000;
+  background: #fff;
   text-decoration: none;
   color: #0000ee;
-  border: 1px solid #000000;
-  padding: 4px;
-  background: #ffffff;
 }
 
 .card:hover {
@@ -146,9 +154,8 @@ html, body {
 
 .thumb {
   width: 100%;
-  height: auto;
   display: block;
-  border: 1px solid #000000;
+  border: 1px solid #000;
 }
 
 .caption {
@@ -164,7 +171,7 @@ html, body {
   font-size: 11px;
 }
 
-/* ===== モーダル ===== */
+/* ===== Modal ===== */
 
 .modal {
   position: fixed;
@@ -180,38 +187,101 @@ html, body {
 }
 
 .modal-content {
-  background: #ffffff;
-  border: 2px solid #000000;
   width: 100%;
   max-width: 900px;
   max-height: 90vh;
   overflow: auto;
+  border: 2px solid #000;
+  background: #fff;
 }
 
 .modal-bar {
   padding: 5px;
   background: #dcdcdc;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000;
 }
 
 .modal-close {
   margin-top: 5px;
   font-size: 12px;
-  background: #ffffff;
-  border: 1px solid #000000;
+  border: 1px solid #000;
+  background: #fff;
   cursor: pointer;
 }
 
 .modal-img {
   width: 100%;
-  height: auto;
   display: block;
 }
 
-/* ===== スマホ対応 ===== */
+/* ===== Profile / SNS ===== */
+
+.profile-box,
+.sns-links {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #000;
+  background: #f5f5f5;
+  font-size: 12px;
+}
+
+.profile-box h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+/* ===== NSFW Gate ===== */
+
+.warning-box {
+  margin-top: 50px;
+  padding: 20px;
+  border: 2px solid #000;
+  background: #fff0f0;
+  text-align: center;
+}
+
+.warning-buttons {
+  margin-top: 20px;
+}
+
+.enter-btn,
+.back-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 5px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+
+.enter-btn:hover {
+  background: #ffcccc;
+}
+
+.back-btn:hover {
+  background: #ccccff;
+}
+
+.password-input {
+  margin-top: 10px;
+  padding: 6px;
+  width: 120px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+.error-message {
+  margin-top: 8px;
+  min-height: 40px;
+  font-size: 12px;
+  color: red;
+}
+
+/* ===== Responsive ===== */
 
 @media (max-width: 600px) {
-
   html, body {
     font-size: 13px;
   }
@@ -220,10 +290,6 @@ html, body {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
-  }
-
-  .lang-btn {
-    align-self: flex-end;
   }
 
   .group-header {
